@@ -28,6 +28,7 @@ wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/SqSUn9L1'))()
 wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/j1qezV5X'))()
+end)
 
    AutobuildSection:NewButton("PIPER J-3 CUB", "An small plane", function()
         loadstring(game:HttpGet('https://pastebin.com/raw/SpirFrPC'))()
@@ -40,3 +41,4 @@ local Event = game:GetService("ReplicatedStorage").Remotes.MoveAircraft
 Event:InvokeServer(A_1)
 wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/gRfC0HGu'))()
+end)
