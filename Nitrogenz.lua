@@ -21,7 +21,7 @@ loadstring(game:HttpGet('https://pastebin.com/raw/mpTZ24Mn'))()
 wait(1)
 loadstring(game:HttpGet('https://pastebin.com/raw/bABK5D69'))()
 wait(1)
-local A_1 = Vector3.new(0, 2, 0)
+local A_1 = Vector3.new(0, 1, 0)
 local Event = game:GetService("ReplicatedStorage").Remotes.MoveAircraft
 Event:InvokeServer(A_1)
 wait(1)
