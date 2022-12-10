@@ -30,7 +30,7 @@ wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/j1qezV5X'))()
 end)
 
-   AutobuildSection:NewButton("PIPER J-3 CUB", "An small plane", function()
+   AutobuildSection:NewButton("PIPER J-3 CUB", "Set Ballast block to 4.5", function()
         loadstring(game:HttpGet('https://pastebin.com/raw/SpirFrPC'))()
 wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/Zt4GZWJd'))()
