@@ -87,5 +87,5 @@ end)
 
 
 AutobuildSection:NewButton("Air Speeder", "you can add more hover shit to make it faster", function()
-       loadstring(game:HttpGet(' https://pastebin.com/raw/jmpV6hqu'))()
+       loadstring(game:HttpGet('https://pastebin.com/raw/jmpV6hqu'))()
 end)
