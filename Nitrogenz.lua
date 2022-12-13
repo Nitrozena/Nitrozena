@@ -8,6 +8,15 @@ local Home = Window:NewTab("Home")
     setclipboard("https://discord.gg/GQgST9KS5x")
     toclipboard("https://discord.gg/GQgST9KS5x")
 end)
+HomeSection:NewButton("Rejoin", "Rejoin game", function()
+    local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+ 
+
+ts:Teleport(game.PlaceId, p)
+end)
 
 local Autobuild = Window:NewTab("Autobuild")
     local AutobuildSection = Autobuild:NewSection("Autobuild")
