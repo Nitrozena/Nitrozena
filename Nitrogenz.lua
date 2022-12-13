@@ -79,7 +79,7 @@ loadstring(game:HttpGet('https://pastebin.com/raw/9XQPe2yQ'))()
 wait(1)
 end)
 
-AutobuildSection:NewButton("Small car", "Change the controlls under the car, function()
+AutobuildSection:NewButton("Small car", "Change the controlls under the car", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/XAT5LGbQ'))()
 wait(1)
 loadstring(game:HttpGet('https://pastebin.com/raw/QCHEmZXK'))()
