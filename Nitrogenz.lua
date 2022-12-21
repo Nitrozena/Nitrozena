@@ -1,4 +1,3 @@
-
 local Me = game.Players.LocalPlayer
 local RS = game.ReplicatedStorage
 local AirCrafts = workspace.PlayerAircraft
@@ -49,6 +48,7 @@ syn.request({
    }),
 })
 wait(1)
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Nitrogens PlaneCrazy Autobuild", "GrapeTheme")
 
