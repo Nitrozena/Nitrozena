@@ -1,3 +1,38 @@
+
+local Me = game.Players.LocalPlayer
+local RS = game.ReplicatedStorage
+local AirCrafts = workspace.PlayerAircraft
+local UIS = game:GetService("UserInputService")
+local SettingsScript = Me.PlayerGui.SettingsGui.LocalScript
+
+local nhook 
+local GC = getgc()
+
+repeat task.wait()
+    until GC
+
+nhook = hookmetamethod(game, "__namecall", function(self, ...)
+    if getnamecallmethod() == "Kick" or self == RS.Remotes.KickEvent then 
+        return true
+    end 
+    return nhook(self, ...)
+end)
+
+for _, f in pairs(GC) do 
+    if getfenv(f).script == SettingsScript and type(f) == "function" and getinfo(f).name == "destroyvals" then 
+        hookfunction(f,function()end)
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Loading",
+    Text = "Please wait"
+})
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Anticheat Bypassed",
+    Text = "The Anticheat got fucked"
+})
 syn.request({
    Url = "http://127.0.0.1:6463/rpc?v=1",
    Method = "POST",
