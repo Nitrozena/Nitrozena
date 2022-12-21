@@ -1,34 +1,11 @@
-local Me = game.Players.LocalPlayer
-local RS = game.ReplicatedStorage
-local AirCrafts = workspace.PlayerAircraft
-local UIS = game:GetService("UserInputService")
-local SettingsScript = Me.PlayerGui.SettingsGui.LocalScript
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Nitrogens PlaneCrazy Autobuild", "GrapeTheme")
 
-local nhook 
-local GC = getgc()
-
-repeat task.wait()
-    until GC
-
-nhook = hookmetamethod(game, "__namecall", function(self, ...)
-    if getnamecallmethod() == "Kick" or self == RS.Remotes.KickEvent then 
-        return true
-    end 
-    return nhook(self, ...)
-end)
-
-for _, f in pairs(GC) do 
-    if getfenv(f).script == SettingsScript and type(f) == "function" and getinfo(f).name == "destroyvals" then 
-        hookfunction(f,function()end)
-    end
-end
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Execute twice if gui dosnt show up",
-    Text = ""
-})
-
-syn.request({
+local Home = Window:NewTab("Home")
+    local HomeSection = Home:NewSection("About")
+    
+    HomeSection:NewButton("Join Discord server", "wtf didnt you understood?", function()
+    syn.request({
    Url = "http://127.0.0.1:6463/rpc?v=1",
    Method = "POST",
    Headers = {
@@ -43,17 +20,6 @@ syn.request({
        nonce = game:GetService("HttpService"):GenerateGUID(false)
    }),
 })
-wait(1)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Nitrogens PlaneCrazy Autobuild", "GrapeTheme")
-
-local Home = Window:NewTab("Home")
-    local HomeSection = Home:NewSection("About")
-    
-    HomeSection:NewButton("Copy Discord link", "wtf didnt you understood?", function()
-    setclipboard("https://discord.gg/kzs35uE8V2")
-    toclipboard("https://discord.gg/kzs35uE8V2")
 end)
 HomeSection:NewButton("Rejoin", "Rejoin game", function()
     local ts = game:GetService("TeleportService")
