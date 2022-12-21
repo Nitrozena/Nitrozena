@@ -24,14 +24,10 @@ for _, f in pairs(GC) do
 end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Loading",
-    Text = "Please wait"
+    Title = "Execute twice if gui dosnt show up",
+    Text = ""
 })
-wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Anticheat Bypassed",
-    Text = "The Anticheat got fucked"
-})
+
 syn.request({
    Url = "http://127.0.0.1:6463/rpc?v=1",
    Method = "POST",
@@ -56,15 +52,13 @@ local Home = Window:NewTab("Home")
     local HomeSection = Home:NewSection("About")
     
     HomeSection:NewButton("Copy Discord link", "wtf didnt you understood?", function()
-    setclipboard("https://discord.gg/GQgST9KS5x")
-    toclipboard("https://discord.gg/GQgST9KS5x")
+    setclipboard("https://discord.gg/kzs35uE8V2")
+    toclipboard("https://discord.gg/kzs35uE8V2")
 end)
 HomeSection:NewButton("Rejoin", "Rejoin game", function()
     local ts = game:GetService("TeleportService")
 
 local p = game:GetService("Players").LocalPlayer
-
- 
 
 ts:Teleport(game.PlaceId, p)
 end)
@@ -136,9 +130,15 @@ wait(1)
 loadstring(game:HttpGet('https://pastebin.com/raw/QCHEmZXK'))()
 end)
 
-
 AutobuildSection:NewButton("Air Speeder", "you can add more hover shit to make it faster", function()
         loadstring(game:HttpGet('https://pastebin.com/raw/qNXLyQNL'))()
 wait()
 loadstring(game:HttpGet('https://pastebin.com/raw/wjDLrEJE'))()
+end)
+
+local LocalPlayer = Window:NewTab("LocalPlayer")
+local LocalPlayer = LocalPlayer:NewSection("LocalPlayer")
+
+LocalPlayer:NewSlider("Walkspeed", "Change your walkspeed", 500, 0, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
