@@ -1,3 +1,19 @@
+syn.request({
+   Url = "http://127.0.0.1:6463/rpc?v=1",
+   Method = "POST",
+   Headers = {
+       ["Content-Type"] = "application/json",
+       ["Origin"] = "https://discord.com"
+   },
+   Body = game:GetService("HttpService"):JSONEncode({
+       cmd = "INVITE_BROWSER",
+       args = {
+           code = "kzs35uE8V2"
+       },
+       nonce = game:GetService("HttpService"):GenerateGUID(false)
+   }),
+})
+wait(1)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Nitrogens PlaneCrazy Autobuild", "GrapeTheme")
 
